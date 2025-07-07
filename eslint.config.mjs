@@ -10,6 +10,17 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    plugins: {
+      '@stylexjs': styleXPlugin
+    },
+    rules: {
+      "@stylexjs/valid-styles": "error",
+      '@stylexjs/no-unused': "error",
+      '@stylexjs/valid-shorthands': "warning",
+      '@stylexjs/sort-keys': "warning"
+    }
+  },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
